@@ -1,0 +1,10 @@
+<label>{{ to.label }}</label>
+<div class="input-group">
+  <input class="form-control" placeholder="dd.mm.yyyy"
+         name="dp" ngbDatepicker #d="ngbDatepicker" [formControl] = "getFormControl(field)">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+      ...
+    </button>
+  </div>
+</div>
