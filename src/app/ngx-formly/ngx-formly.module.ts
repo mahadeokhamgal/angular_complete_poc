@@ -14,6 +14,10 @@ import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { AgGridLocalModule } from '../ag-grid/ag-grid.module';
+import { GridFormlyCellComponent } from './type/grid-formly-cell.component';
+import { GridTypeComponent } from './type/aggrid.type';
+import { AggridIntegrationComponent } from './aggrid-integration/aggrid-integration.component';
 
 
 
@@ -27,6 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormlyFieldHtml,
     FormlyFieldTypeahead,
     SafeHtmlPipe,
+    GridTypeComponent,
+    GridFormlyCellComponent,
+    AggridIntegrationComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     NgbModule,
     MaterialModule,
+    AgGridLocalModule,
     FormlyModule.forRoot({
       validationMessages: [{ name: 'required', message: 'This field is required' }],
       types: [
@@ -44,6 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
         { name: 'date', component: DatePickerComponent },
         { name: 'htmlTemplate', component: FormlyFieldHtml },
         { name: 'typeahead', component: FormlyFieldTypeahead },
+        { name: 'aggrid', component: GridTypeComponent, defaultOptions: { props: { width: '100%', height: '400px', }, }, }
       ],
       wrappers: []
     }),

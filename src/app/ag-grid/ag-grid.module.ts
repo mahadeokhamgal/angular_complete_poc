@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     AgGridModule
   ],
   exports: [
+    AgGridModule,
     AgGridAngularComponent,
     AgGridBasicGridComponent
   ]
