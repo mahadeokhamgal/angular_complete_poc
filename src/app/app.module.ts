@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AsyncPipe } from '@angular/common';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { MaterialModule } from './material/material.module';
-import { AgGridModule } from './ag-grid/ag-grid.module';
+import { AgGridLocalModule } from './ag-grid/ag-grid.module';
 import { NgxFormlyModule } from './ngx-formly/ngx-formly.module';
 
 @NgModule({
@@ -24,7 +24,7 @@ import { NgxFormlyModule } from './ngx-formly/ngx-formly.module';
     ReactiveFormsModule,
     AsyncPipe,
     MaterialModule,
-    AgGridModule,
+    AgGridLocalModule,
     NgxFormlyModule,
   ],
   providers: [],
