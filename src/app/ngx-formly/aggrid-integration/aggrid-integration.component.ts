@@ -82,137 +82,178 @@ export class AggridIntegrationComponent {
 
   fields: FormlyFieldConfig[] = [
     {
-      key: 'investments',
-      type: 'aggrid',
-      className: 'ag-theme-balham',
+      type: 'tabs',
       props: {
-        height: '200px',
-        gridOptions: {
-          rowHeight: 42,
-          columnDefs: [
-            {
-              headerName: 'Name of Investment',
-              field: 'investmentName',
-              sortable: true,
-              width: 350,
-            },
-            {
-              headerName: 'Date of Investment',
-              field: 'investmentDate',
-              sortable: true,
-              width: 350,
-            },
-            {
-              headerName: 'Stock Identifier',
-              field: 'stockIdentifier',
-              // width: 330,
-            },
-          ],
-        },
+        isSubmit: false,
       },
-      fieldArray: {
-        fieldGroup: [
-          {
-            type: 'input',
-            key: 'investmentName',
-            props: {
-              required: true,
-            },
-          },
-          {
-            type: 'input',
-            key: 'investmentDate',
-            props: {
-              type: 'date',
-            },
-          },
-          {
-            type: 'input',
-            key: 'stockIdentifier',
-          },
-        ],
-      },
-    },
-    {
-      className: 'section-label',
-      template: '<h5>Personal data</h5>',
-    },
-    {
-      fieldGroupClassName: 'row',
       fieldGroup: [
         {
-          key: 'name',
-          type: 'input',
-          className: 'col-md-6',
-          props: {
-            label: 'Name',
-            required: true,
+          props: { label: 'Row Grouping' },
+          fieldGroup: [{
+            className: 'section-label',
+            template: '<h5>Personal data</h5>',
           },
+          {
+            fieldGroupClassName: 'row',
+            fieldGroup: [
+              {
+                key: 'name',
+                type: 'input',
+                className: 'col-md-6',
+                props: {
+                  label: 'Name',
+                  required: true,
+                },
+              },
+              {
+                key: 'surname',
+                type: 'input',
+                className: 'col-md-6',
+                props: {
+                  label: 'Surname',
+                  required: true,
+                },
+              },
+            ],
+          },
+          {
+            key: 'investments2',
+            type: 'aggrid-rowgroup',
+            className: 'ag-theme-balham',
+            props: {
+              height: '200px',
+              groupingKey: 'investmentDate',
+              gridOptions: {
+                rowHeight: 42,
+                columnDefs: [
+                  {
+                    headerName: 'Name of Investment',
+                    field: 'investmentName',
+                    sortable: true,
+                    width: 350,
+                  },
+                  {
+                    headerName: 'Date of Investment',
+                    field: 'investmentDate',
+                    sortable: true,
+                    width: 350,
+                  },
+                  {
+                    headerName: 'Stock Identifier',
+                    field: 'stockIdentifier',
+                    // width: 330,
+                  },
+                ],
+              },
+            },
+            fieldArray: {
+              fieldGroup: [
+                {
+                  type: 'input',
+                  key: 'investmentName',
+                  props: {
+                    required: true,
+                  },
+                },
+                {
+                  type: 'input',
+                  key: 'investmentDate',
+                  props: {
+                    type: 'date',
+                  },
+                },
+                {
+                  type: 'input',
+                  key: 'stockIdentifier',
+                },
+              ],
+            },
+          }],
         },
         {
-          key: 'surname',
-          type: 'input',
-          className: 'col-md-6',
-          props: {
-            label: 'Surname',
-            required: true,
+          props: { label: 'Basic Aggrid with formly' },
+          fieldGroup: [{
+            key: 'investments',
+            type: 'aggrid',
+            className: 'ag-theme-balham',
+            props: {
+              height: '200px',
+              gridOptions: {
+                rowHeight: 42,
+                columnDefs: [
+                  {
+                    headerName: 'Name of Investment',
+                    field: 'investmentName',
+                    sortable: true,
+                    width: 350,
+                  },
+                  {
+                    headerName: 'Date of Investment',
+                    field: 'investmentDate',
+                    sortable: true,
+                    width: 350,
+                  },
+                  {
+                    headerName: 'Stock Identifier',
+                    field: 'stockIdentifier',
+                    // width: 330,
+                  },
+                ],
+              },
+            },
+            fieldArray: {
+              fieldGroup: [
+                {
+                  type: 'input',
+                  key: 'investmentName',
+                  props: {
+                    required: true,
+                  },
+                },
+                {
+                  type: 'input',
+                  key: 'investmentDate',
+                  props: {
+                    type: 'date',
+                  },
+                },
+                {
+                  type: 'input',
+                  key: 'stockIdentifier',
+                },
+              ],
+            },
           },
-        },
+          {
+            className: 'section-label',
+            template: '<h5>Personal data</h5>',
+          },
+          {
+            fieldGroupClassName: 'row',
+            fieldGroup: [
+              {
+                key: 'name',
+                type: 'input',
+                className: 'col-md-6',
+                props: {
+                  label: 'Name',
+                  required: true,
+                },
+              },
+              {
+                key: 'surname',
+                type: 'input',
+                className: 'col-md-6',
+                props: {
+                  label: 'Surname',
+                  required: true,
+                },
+              },
+            ],
+          }],
+        }
       ],
-    },
-    {
-      key: 'investments2',
-      type: 'aggrid-rowgroup',
-      className: 'ag-theme-balham',
-      props: {
-        height: '200px',
-        groupingKey:'investmentDate',
-        gridOptions: {
-          rowHeight: 42,
-          columnDefs: [
-            {
-              headerName: 'Name of Investment',
-              field: 'investmentName',
-              sortable: true,
-              width: 350,
-            },
-            {
-              headerName: 'Date of Investment',
-              field: 'investmentDate',
-              sortable: true,
-              width: 350,
-            },
-            {
-              headerName: 'Stock Identifier',
-              field: 'stockIdentifier',
-              // width: 330,
-            },
-          ],
-        },
-      },
-      fieldArray: {
-        fieldGroup: [
-          {
-            type: 'input',
-            key: 'investmentName',
-            props: {
-              required: true,
-            },
-          },
-          {
-            type: 'input',
-            key: 'investmentDate',
-            props: {
-              type: 'date',
-            },
-          },
-          {
-            type: 'input',
-            key: 'stockIdentifier',
-          },
-        ],
-      },
-    },
+    }
   ];
 
   submit() {
