@@ -37,8 +37,8 @@ export class RowGroupTypeComponent extends FieldArrayType implements OnInit {
         })
     }
     onFirstDataRendered(params: FirstDataRenderedEvent) {
-        params.api.sizeColumnsToFit();
-        console.log('grouped data is', this.groupBy(this.props['gridOptions']['rowData'], 'investmentDate'));
+        // params.api.sizeColumnsToFit();
+        // console.log('grouped data is', this.groupBy(this.props['gridOptions']['rowData'], 'investmentDate'));
     }
     groupBy<T>(array: T[], key: keyof T): { [key: string]: T[] } {
         return array.reduce((acc: any, current) => {
