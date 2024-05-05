@@ -4,7 +4,7 @@ import { FirstDataRenderedEvent, GridOptions, ColDef } from 'ag-grid-community';
 import { GridFormlyCellComponent } from './grid-formly-cell.component';
 import { DeepCopy } from '../../clone';
 @Component({
-    selector: 'formly-field-grid',
+    selector: 'formly-field-grid-row-group',
     templateUrl: './aggrid-rowgrp.type.html',
 })
 
@@ -24,6 +24,7 @@ export class RowGroupTypeComponent extends FieldArrayType implements OnInit {
         gridOptions.context = { parentField: this.field, };
         this.gridOptions = gridOptions;
         this.gridOptions['domLayout'] = 'autoHeight';
+        this.gridOptions['suppressNoRowsOverlay'] = true;
 
         this.groupedData = this.groupBy(this.model, 'investmentDate') as any;
         Object.entries(this.groupedData).forEach((group: any, key) => {

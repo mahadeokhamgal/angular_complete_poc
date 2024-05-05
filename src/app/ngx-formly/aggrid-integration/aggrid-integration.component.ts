@@ -82,33 +82,6 @@ export class AggridIntegrationComponent {
 
   fields: FormlyFieldConfig[] = [
     {
-      className: 'section-label',
-      template: '<h5>Personal data</h5>',
-    },
-    {
-      fieldGroupClassName: 'row',
-      fieldGroup: [
-        {
-          key: 'name',
-          type: 'input',
-          className: 'col-md-6',
-          props: {
-            label: 'Name',
-            required: true,
-          },
-        },
-        {
-          key: 'surname',
-          type: 'input',
-          className: 'col-md-6',
-          props: {
-            label: 'Surname',
-            required: true,
-          },
-        },
-      ],
-    },
-    {
       key: 'investments',
       type: 'aggrid',
       className: 'ag-theme-balham',
@@ -159,6 +132,33 @@ export class AggridIntegrationComponent {
           },
         ],
       },
+    },
+    {
+      className: 'section-label',
+      template: '<h5>Personal data</h5>',
+    },
+    {
+      fieldGroupClassName: 'row',
+      fieldGroup: [
+        {
+          key: 'name',
+          type: 'input',
+          className: 'col-md-6',
+          props: {
+            label: 'Name',
+            required: true,
+          },
+        },
+        {
+          key: 'surname',
+          type: 'input',
+          className: 'col-md-6',
+          props: {
+            label: 'Surname',
+            required: true,
+          },
+        },
+      ],
     },
     {
       key: 'investments2',
