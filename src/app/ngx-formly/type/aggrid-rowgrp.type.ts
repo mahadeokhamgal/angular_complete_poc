@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FieldArrayType } from '@ngx-formly/core';
 import { FirstDataRenderedEvent, GridOptions, ColDef } from 'ag-grid-community';
 import { GridFormlyCellComponent } from './grid-formly-cell.component';
-// import * as _ from 'lodash';
+import { DeepCopy } from '../../clone';
 @Component({
     selector: 'formly-field-grid',
     templateUrl: './aggrid-rowgrp.type.html',
@@ -10,6 +10,7 @@ import { GridFormlyCellComponent } from './grid-formly-cell.component';
 
 export class RowGroupTypeComponent extends FieldArrayType implements OnInit {
     gridOptions: GridOptions | undefined; style: any = {};
+    emptyArray: any[] = [];
     // gridOptionsLocal: GridOptions[] | undefined;
     groupedData: any[] = [];
     groupedDataLocal: any[] = [];
@@ -22,6 +23,7 @@ export class RowGroupTypeComponent extends FieldArrayType implements OnInit {
         const gridOptions: GridOptions = this.props['gridOptions'] || {};
         gridOptions.context = { parentField: this.field, };
         this.gridOptions = gridOptions;
+        this.gridOptions['domLayout'] = 'autoHeight';
 
         this.groupedData = this.groupBy(this.model, 'investmentDate') as any;
         Object.entries(this.groupedData).forEach((group: any, key) => {
@@ -29,6 +31,7 @@ export class RowGroupTypeComponent extends FieldArrayType implements OnInit {
             this.groupedDataLocal[key] = {
                 'title': group[0],
                 'data': group[1],
+                'gridOptions': DeepCopy.copy(this.gridOptions),
             }
         })
     }
