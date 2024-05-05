@@ -44,6 +44,38 @@ export class AggridIntegrationComponent {
         stockIdentifier: 6,
       },
     ],
+    investments2: [
+      {
+        investmentName: 'project1',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 1,
+      },
+      {
+        investmentName: 'project2',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 2,
+      },
+      {
+        investmentName: 'project3',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 3,
+      },
+      {
+        investmentName: 'project4',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 4,
+      },
+      {
+        investmentName: 'project5',
+        investmentDate: '2004-06-22',
+        stockIdentifier: 5,
+      },
+      {
+        investmentName: 'project6',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 6,
+      },
+    ],
   };
 
   options: FormlyFormOptions = {};
@@ -82,6 +114,59 @@ export class AggridIntegrationComponent {
       className: 'ag-theme-balham',
       props: {
         height: '200px',
+        gridOptions: {
+          rowHeight: 42,
+          columnDefs: [
+            {
+              headerName: 'Name of Investment',
+              field: 'investmentName',
+              sortable: true,
+              width: 350,
+            },
+            {
+              headerName: 'Date of Investment',
+              field: 'investmentDate',
+              sortable: true,
+              width: 350,
+            },
+            {
+              headerName: 'Stock Identifier',
+              field: 'stockIdentifier',
+              // width: 330,
+            },
+          ],
+        },
+      },
+      fieldArray: {
+        fieldGroup: [
+          {
+            type: 'input',
+            key: 'investmentName',
+            props: {
+              required: true,
+            },
+          },
+          {
+            type: 'input',
+            key: 'investmentDate',
+            props: {
+              type: 'date',
+            },
+          },
+          {
+            type: 'input',
+            key: 'stockIdentifier',
+          },
+        ],
+      },
+    },
+    {
+      key: 'investments2',
+      type: 'aggrid-rowgroup',
+      className: 'ag-theme-balham',
+      props: {
+        height: '200px',
+        groupingKey:'investmentDate',
         gridOptions: {
           rowHeight: 42,
           columnDefs: [

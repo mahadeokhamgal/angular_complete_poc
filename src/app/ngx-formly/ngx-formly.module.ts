@@ -18,6 +18,7 @@ import { AgGridLocalModule } from '../ag-grid/ag-grid.module';
 import { GridFormlyCellComponent } from './type/grid-formly-cell.component';
 import { GridTypeComponent } from './type/aggrid.type';
 import { AggridIntegrationComponent } from './aggrid-integration/aggrid-integration.component';
+import { RowGroupTypeComponent } from './type/aggrid-rowgrp.type';
 
 
 
@@ -34,6 +35,7 @@ import { AggridIntegrationComponent } from './aggrid-integration/aggrid-integrat
     GridTypeComponent,
     GridFormlyCellComponent,
     AggridIntegrationComponent,
+    RowGroupTypeComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,8 @@ import { AggridIntegrationComponent } from './aggrid-integration/aggrid-integrat
         { name: 'date', component: DatePickerComponent },
         { name: 'htmlTemplate', component: FormlyFieldHtml },
         { name: 'typeahead', component: FormlyFieldTypeahead },
-        { name: 'aggrid', component: GridTypeComponent, defaultOptions: { props: { width: '100%', height: '400px', }, }, }
+        { name: 'aggrid', component: GridTypeComponent, defaultOptions: { props: { width: '100%', height: '400px', }, }, },
+        { name: 'aggrid-rowgroup', component: RowGroupTypeComponent, defaultOptions: { props: { width: '100%', height: '400px', }, }, }
       ],
       wrappers: []
     }),
