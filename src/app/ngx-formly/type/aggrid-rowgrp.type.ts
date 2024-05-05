@@ -9,6 +9,7 @@ import { GridFormlyCellComponent } from './grid-formly-cell.component';
 
 export class RowGroupTypeComponent extends FieldArrayType implements OnInit {
     gridOptions: GridOptions | undefined; style: any = {};
+    groupedData: any[] = [];
     ngOnInit() {
         console.log('the props is',this.props)
         
@@ -32,8 +33,13 @@ export class RowGroupTypeComponent extends FieldArrayType implements OnInit {
             return acc;
         }, {});
     }
-    
- 
-    
+    getGroupHeaders():any[]{
+        if(!this.props['gridOptions']['rowData']) {
+            this.groupedData = [];
+            return [];
+        }
+        this.groupedData = this.groupBy(this.props['gridOptions']['rowData'],'investmentDate') as any;
+        return Object.keys(this.groupedData);
+    }
  
 }

@@ -7,5 +7,6 @@
     (firstDataRendered)="onFirstDataRendered($event)"
   >
   </ag-grid-angular>
-  <div *ngFor="let grp of this.groupBy(this.props['gridOptions']['rowData'],'investmentDate')">{{grp}}</div>
 </div>
+<div *ngFor="let header of this.getGroupHeaders()" style='background: aquamarine;'><h3>{{header}}</h3></div>
+
