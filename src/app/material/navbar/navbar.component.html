@@ -1,10 +1,10 @@
 <mat-toolbar>
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item ><a href="aggrid">aggrid</a></button>
-        <button mat-menu-item ><a href="material">material</a></button>
-        <button mat-menu-item ><a href="formly">formly</a></button>
-        <button mat-menu-item ><a href="formly_aggrid">formly_aggrid</a></button>
+        <button mat-menu-item ><a [routerLink]="['/aggrid']">aggrid</a></button>
+        <button mat-menu-item ><a [routerLink]="['/material']">material</a></button>
+        <button mat-menu-item ><a [routerLink]="['/formly']">formly</a></button>
+        <button mat-menu-item ><a [routerLink]="['/formly_aggrid']">formly_aggrid</a></button>
 
         
     </mat-menu>

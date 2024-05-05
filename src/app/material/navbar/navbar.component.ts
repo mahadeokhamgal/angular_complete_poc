@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.less']
 })
 export class NavbarComponent {
+  constructor(){
 
+  }
+  navigate(url: string){
+
+  }
 }
