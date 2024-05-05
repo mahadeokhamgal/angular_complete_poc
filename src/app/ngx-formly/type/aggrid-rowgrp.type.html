@@ -1,12 +1,15 @@
-<div [ngStyle]="style">
-  <ag-grid-angular
-    style="width: 100%; height: 100%"
-    class="className"
-    [gridOptions]="gridOptions"
-    [rowData]="model"
-    (firstDataRendered)="onFirstDataRendered($event)"
-  >
-  </ag-grid-angular>
+
+<div *ngFor="let group of this.groupedDataLocal">
+  <h3 style='background: aquamarine;'>{{group.title}}</h3>
+  <div [ngStyle]="style">
+    <ag-grid-angular
+      style="width: 100%; height: 100%"
+      class="className"
+      [gridOptions]="gridOptions"
+      [rowData]="group.data"
+      (firstDataRendered)="onFirstDataRendered($event)"
+    >
+    </ag-grid-angular>
+  </div>
 </div>
-<div *ngFor="let header of this.getGroupHeaders()" style='background: aquamarine;'><h3>{{header}}</h3></div>
 
