@@ -50,12 +50,13 @@ export class AgGridBasicGridComponent {
     "ag-theme-quartz";
   frameworkComponents: any;
   gridOptions: GridOptions<any>;
+  rowDataC: any;
 
   constructor() {
     this.gridOptions = <GridOptions>{
-      enableSorting: true,
+      // enableSorting: true,
       // enable filtering 
-      enableFilter: true,
+      // enableFilter: true,
       columnDefs: this.columnDefs,
       rowData: this.rowData,
     };
@@ -68,12 +69,20 @@ export class AgGridBasicGridComponent {
 
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api;
+    const groupData = this.groupData();
+    const rowData:any[] = [];
+    groupData.forEach((e, i) => {
+      rowData.push({year: e.category, name: '-----------------------'});
+      rowData.push(...(e.children as any[]));
+    })
+    console.log("groupdata is", this.groupData());
+    this.gridApi.setRowData(rowData);
   }
 
   groupData() {
     const groupData: any = {};
     this.rowData?.forEach(row => {
-      const category = row.category;
+      const category = row.year;
       if (!groupData[category]) groupData[category] = [];
       groupData[category].push(row);
     })
