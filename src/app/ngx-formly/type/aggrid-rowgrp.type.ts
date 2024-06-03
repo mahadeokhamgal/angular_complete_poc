@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { FieldArrayType } from '@ngx-formly/core';
 // import { AgGridAngular } from 'ag-grid-angular';
 import { FirstDataRenderedEvent, GridOptions, ColDef, GridReadyEvent, ColGroupDef } from 'ag-grid-community';
@@ -20,6 +20,7 @@ export class RowGroupTypeComponent extends FieldArrayType implements OnInit {
     groupedDataLocal: any[] = [];
     columnDefs!: (ColDef | ColGroupDef)[];
     @ViewChild('topGrid') topGrid!: AgGridAngular;
+    @ViewChildren('dynamicElements') dynamicElementRefsC !: any;
     ngOnInit() {
         console.log('the props is', this.props);
         console.log("model is", this.model);

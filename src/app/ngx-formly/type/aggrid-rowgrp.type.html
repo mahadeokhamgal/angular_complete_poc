@@ -6,10 +6,10 @@
     [gridOptions]="gridOptions" 
     [rowData]="emptyArray"
       [columnDefs]="columnDefs" 
-      [headerHeight]="35" 
-      [alignedGrids]="[bottomGrid]"
+      [headerHeight]="35"
+      (firstDataRendered) = "onFirstDataRendered($event)"
       [suppressHorizontalScroll] = "true"
-       #topGrid >
+      #dynamicElements >
     </ag-grid-angular>
   </div>
 </div>
@@ -23,10 +23,9 @@
     </p>
     <div *ngIf="!group.isCollapsed">
       <ag-grid-angular style="width: 100%;" 
-      #{{group.id}} class="className" 
+      #dynamicElements class="className" 
       [gridOptions]="group.gridOptions" [rowData]="group.data"
       [columnDefs]="columnDefs" [suppressHorizontalScroll] = "true"
-      [alignedGrids]="[bottomGrid]"
         [headerHeight]="0" (gridReady)="onGridReadyGroup($event, group.id)">
       </ag-grid-angular>
     </div>
@@ -41,8 +40,8 @@
     [rowData]="emptyArray2"
       [columnDefs]="columnDefs" 
       
-      [alignedGrids]="getMiddleAlignedGrids()"
-      [suppressHorizontalScroll] = "false" #bottomGrid >
+      [alignedGrids]="dynamicElementRefsC"
+      [suppressHorizontalScroll] = "false" >
     </ag-grid-angular>
   </div>
 </div>
