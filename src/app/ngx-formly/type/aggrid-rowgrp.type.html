@@ -1,47 +1,33 @@
 <div>
   <div class="ag-grid-row-grouping-column-header">
-    <ag-grid-angular 
-    style="width: 100%;" 
-    class="className" 
-    [gridOptions]="gridOptions" 
-    [rowData]="emptyArray"
-      [columnDefs]="columnDefs" 
-      [headerHeight]="35"
-      (firstDataRendered) = "onFirstDataRendered($event)"
-      [suppressHorizontalScroll] = "true"
-      #dynamicElements >
+    <ag-grid-angular style="width: 100%;" class="className" [gridOptions]="gridOptions" [rowData]="[]"
+      [columnDefs]="columnDefs" [headerHeight]="35"
+      [suppressHorizontalScroll]="true" (gridReady)="onGridReadyGroup()" #dynamicElements>
     </ag-grid-angular>
   </div>
 </div>
 <div #groupedGrids>
   <div *ngFor="let group of this.groupedDataLocal" style="background-color: #f5f5f5; padding-top: 10px;">
-    <p style="display: inline-block; vertical-align: middle; padding: 0 0.6em; font-weight: 600;" (click)="group.isCollapsed = !group.isCollapsed">
+    <p style="display: inline-block; vertical-align: middle; padding: 0 0.6em; font-weight: 600;"
+      (click)="group.isCollapsed = !group.isCollapsed">
       <i class="fas" style="color: black; font-size: 16px;"
         [ngClass]="group.isCollapsed ? 'fa-chevron-down' : 'fa-chevron-up'">
       </i>
       {{group.title}}
     </p>
     <div *ngIf="!group.isCollapsed">
-      <ag-grid-angular style="width: 100%;" 
-      #dynamicElements class="className" 
-      [gridOptions]="group.gridOptions" [rowData]="group.data"
-      [columnDefs]="columnDefs" [suppressHorizontalScroll] = "true"
-        [headerHeight]="0" (gridReady)="onGridReadyGroup($event, group.id)">
+      <ag-grid-angular style="width: 100%;" #dynamicElements class="className" [gridOptions]="group.gridOptions"
+        [rowData]="group.data" [columnDefs]="columnDefs" [suppressHorizontalScroll]="true" [headerHeight]="0"
+        (gridReady)="onGridReadyGroup()">
       </ag-grid-angular>
     </div>
   </div>
 </div>
 <div>
   <div class="ag-grid-row-grouping-column-header">
-    <ag-grid-angular 
-    style="width: 100%;" 
-    class="className" 
-    [gridOptions]="gridOptions" 
-    [rowData]="emptyArray2"
-      [columnDefs]="columnDefs" 
-      
-      [alignedGrids]="dynamicElementRefsC"
-      [suppressHorizontalScroll] = "false" >
+    <ag-grid-angular style="width: 100%;" class="className" [gridOptions]="gridOptions" [rowData]="[]"
+      [columnDefs]="columnDefs" (gridReady)="onGridReadyGroup()" [alignedGrids]="dynamicElementRefsC"
+      [suppressHorizontalScroll]="false">
     </ag-grid-angular>
   </div>
 </div>
