@@ -1,10 +1,8 @@
-import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChildren } from '@angular/core';
 import { FieldArrayType } from '@ngx-formly/core';
-// import { AgGridAngular } from 'ag-grid-angular';
-import { FirstDataRenderedEvent, GridOptions, ColDef, GridReadyEvent, ColGroupDef } from 'ag-grid-community';
-import { AgGridAngular } from 'ag-grid-angular';
-import { GridFormlyCellComponent } from './grid-formly-cell.component';
+import { GridOptions, ColDef, ColGroupDef } from 'ag-grid-community';
 import * as _ from 'lodash';
+
 @Component({
     selector: 'formly-field-grid-row-group',
     templateUrl: './aggrid-rowgrp.type.html',
@@ -24,11 +22,14 @@ export class RowGroupTypeComponent extends FieldArrayType implements OnInit {
     }
 
     ngOnInit() {
-        console.log('the props is', this.props);
-        console.log("model is", this.model);
+        
+        /**
+         * // map cell Renderer to Formly Component 
+         * this.props.gridOptions.columnDefs.forEach((column: ColDef) => { column.cellRenderer = GridFormlyCellComponent; }); 
+         * // set grid options and context of the parent formly field 
+         */
 
-
-        this.style = { width: this.props['width'], height: this.props['height'], }; // map cell Renderer to Formly Component this.props.gridOptions.columnDefs.forEach((column: ColDef) => { column.cellRenderer = GridFormlyCellComponent; }); // set grid options and context of the parent formly field 
+        this.style = { width: this.props['width'], height: this.props['height'], }; 
         const gridOptions: GridOptions = this.props['gridOptions'] || {};
         gridOptions.context = { parentField: this.field, };
         this.gridOptions = gridOptions;
@@ -48,6 +49,7 @@ export class RowGroupTypeComponent extends FieldArrayType implements OnInit {
                 'isCollapsed': false,
             }
         })
+
     }
 
     /**
