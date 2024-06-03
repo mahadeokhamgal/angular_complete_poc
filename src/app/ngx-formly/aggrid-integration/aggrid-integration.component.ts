@@ -143,6 +143,23 @@ export class AggridIntegrationComponent {
                     field: 'stockIdentifier',
                     // width: 330,
                   },
+                  {
+                    headerName: 'Name of Investment',
+                    field: 'investmentName',
+                    sortable: true,
+                    width: 350,
+                  },
+                  {
+                    headerName: 'Date of Investment',
+                    field: 'investmentDate',
+                    sortable: true,
+                    width: 350,
+                  },
+                  {
+                    headerName: 'Stock Identifier',
+                    field: 'stockIdentifier',
+                    // width: 330,
+                  },
                 ],
               },
             },
