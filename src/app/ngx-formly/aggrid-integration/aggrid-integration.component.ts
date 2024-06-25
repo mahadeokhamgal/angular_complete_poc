@@ -75,6 +75,186 @@ export class AggridIntegrationComponent {
         investmentDate: '2004-06-20',
         stockIdentifier: 6,
       },
+      {
+        investmentName: 'project1',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 1,
+      },
+      {
+        investmentName: 'project2',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 2,
+      },
+      {
+        investmentName: 'project3',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 3,
+      },
+      {
+        investmentName: 'project4',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 4,
+      },
+      {
+        investmentName: 'project5',
+        investmentDate: '2004-06-22',
+        stockIdentifier: 5,
+      },
+      {
+        investmentName: 'project6',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 6,
+      },
+      {
+        investmentName: 'project1',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 1,
+      },
+      {
+        investmentName: 'project2',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 2,
+      },
+      {
+        investmentName: 'project3',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 3,
+      },
+      {
+        investmentName: 'project4',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 4,
+      },
+      {
+        investmentName: 'project5',
+        investmentDate: '2004-06-22',
+        stockIdentifier: 5,
+      },
+      {
+        investmentName: 'project6',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 6,
+      },
+      {
+        investmentName: 'project1',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 1,
+      },
+      {
+        investmentName: 'project2',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 2,
+      },
+      {
+        investmentName: 'project3',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 3,
+      },
+      {
+        investmentName: 'project4',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 4,
+      },
+      {
+        investmentName: 'project5',
+        investmentDate: '2004-06-22',
+        stockIdentifier: 5,
+      },
+      {
+        investmentName: 'project6',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 6,
+      },
+      {
+        investmentName: 'project1',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 1,
+      },
+      {
+        investmentName: 'project2',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 2,
+      },
+      {
+        investmentName: 'project3',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 3,
+      },
+      {
+        investmentName: 'project4',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 4,
+      },
+      {
+        investmentName: 'project5',
+        investmentDate: '2004-06-22',
+        stockIdentifier: 5,
+      },
+      {
+        investmentName: 'project6',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 6,
+      },
+      {
+        investmentName: 'project1',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 1,
+      },
+      {
+        investmentName: 'project2',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 2,
+      },
+      {
+        investmentName: 'project3',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 3,
+      },
+      {
+        investmentName: 'project4',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 4,
+      },
+      {
+        investmentName: 'project5',
+        investmentDate: '2004-06-22',
+        stockIdentifier: 5,
+      },
+      {
+        investmentName: 'project6',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 6,
+      },
+      {
+        investmentName: 'project1',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 1,
+      },
+      {
+        investmentName: 'project2',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 2,
+      },
+      {
+        investmentName: 'project3',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 3,
+      },
+      {
+        investmentName: 'project4',
+        investmentDate: '2004-06-21',
+        stockIdentifier: 4,
+      },
+      {
+        investmentName: 'project5',
+        investmentDate: '2004-06-22',
+        stockIdentifier: 5,
+      },
+      {
+        investmentName: 'project6',
+        investmentDate: '2004-06-20',
+        stockIdentifier: 6,
+      },
     ],
   };
 
